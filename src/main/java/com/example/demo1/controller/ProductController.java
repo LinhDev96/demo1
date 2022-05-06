@@ -58,7 +58,7 @@ public class ProductController {
                     newProduct.setId(id);
                     return repository.save(newProduct);
                 });
-        return ResponseEntity.status(HttpStatus.OK).body(
+        return ResponseEntity.status(HttpStatus.OK).body(//ok
                 new ResponseObject("ok", "Update Product successfully", updatedProduct)
         );
     }
