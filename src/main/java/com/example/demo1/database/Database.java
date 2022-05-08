@@ -8,6 +8,24 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/*
+docker run -d --rm --name mysql-spring-boot-tutorial \ -d diamond chạy ở chế độ ngầm background --rm tắt container là xoá luôn lần sau tạo lại
+        -e MYSQL_ROOT_PASSWORD=123456 \ -e environment variable
+
+        -e MYSQL_USER=linhdev \ user va mật khẩu
+        -e MYSQL_PASSWORD=123456 \
+
+        -e MYSQL_DATABASE=test \ tên db
+        -p 3309:3306 \ ánh xạ cổng 3309 là Pc 3306 là container ,khi gọi 3309 hiểu laf gọi 3306 của container
+        --volume mysql-spring-boot-tutorial-volume:/var/lib/mysql \ volume trên máy tính sẽ đc map với container
+        mysql:latest  \ mysql version
+
+        mysql -h localhost -P 3309 --protocol=tcp -u linhdev -p  \connect trong csdl
+*/
+
+
+
+
 @Configuration
 public class Database {
     private static final Logger logger = LoggerFactory.getLogger(Database.class);
