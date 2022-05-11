@@ -34,8 +34,8 @@ public class Database {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                Product productA = new Product("fsf",2020,2500,"");
-                Product productB = new Product("fseff",2021,250,"");
+                Product productA = new Product("fedcv",2020,2500,"");
+                Product productB = new Product("efvdfeff",2021,250,"");
                 logger.info("insert data: " + productRepository.save(productA));
                 logger.info("insert data: " + productRepository.save(productB));
             }

@@ -73,4 +73,17 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
                 new ResponseObject("false","can not find product to delete","")) ;
     }
+
+    @DeleteMapping("")
+    ResponseEntity<ResponseObject> deleteProduct(){
+        List exist = repository.findAll();
+        if(exist.size()>0){
+            repository.deleteAll();
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    new ResponseObject("ok","Delete all product successfully","")) ;
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                new ResponseObject("false","can not find product to delete","")) ;
+    }
+
 }
